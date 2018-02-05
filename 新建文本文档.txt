@@ -1,5 +1,6 @@
 ¸Õ¸Õ
 <<<<<<< HEAD
+<<<<<<< HEAD
 ²âÊÔwiwiurur
 hello
 sssss
@@ -10,3 +11,8 @@ hello world
 sssss
 zzzzzzzzzzzzzzzzznnnnnnnn
 >>>>>>> 4e051d08cc29d205e6ce6e7476ccc3c11d1d3bd6
+=======
+²âÊÔ
+hello world
+sssss
+>>>>>>> parent of 794fc25... 11
