@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10100.17.0207.2140                               -->
+<workbook source-build='10.1.5 (10100.17.0207.2140)' source-platform='win' version='10.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='充值金额分布 (Tableau绘图整理数据)' inline='true' name='federated.0qdk4190k4l0pv1av1lh40vcw7fl' version='10.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='金额分布' name='excel-direct.1x5labj0kk8auq10k60ah0c7okj1'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='D:\工作\2018\多益网络2018\多益20180630\底稿\20180717\充值金额+渠道+地域分布.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1x5labj0kk8auq10k60ah0c7okj1' name='充值金额分布' table='[充值金额分布$]' type='table'>
+          <columns gridOrigin='A1:D76:no:A1:D76:0' header='yes' outcome='2'>
+            <column datatype='string' name='游戏名称' ordinal='0' />
+            <column datatype='string' name='区间' ordinal='1' />
+            <column datatype='real' name='充值总金额' ordinal='2' />
+            <column datatype='integer' name='充值总人数' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>游戏名称</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[游戏名称]</local-name>
+            <parent-name>[充值金额分布]</parent-name>
+            <remote-alias>游戏名称</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LZH_RCN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>区间</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[区间]</local-name>
+            <parent-name>[充值金额分布]</parent-name>
+            <remote-alias>区间</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LZH_RCN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>充值总金额</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[充值总金额]</local-name>
+            <parent-name>[充值金额分布]</parent-name>
+            <remote-alias>充值总金额</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>充值总人数</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[充值总人数]</local-name>
+            <parent-name>[充值金额分布]</parent-name>
+            <remote-alias>充值总人数</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[充值金额分布]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D76:no:A1:D76:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='integer' name='[充值总人数]' role='measure' type='quantitative' />
+      <column datatype='real' name='[充值总金额]' role='measure' type='quantitative' />
+      <column-instance column='[充值总人数]' derivation='Sum' name='[sum:充值总人数:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[充值总金额]' derivation='Sum' name='[sum:充值总金额:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.47817' measure-ordering='alphabetic' measure-percentage='0.52183' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[sum:充值总人数:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[sum:充值总金额:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;China&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='充值金额分布'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;</run>
+            <run>Sheet Name</run>
+            <run>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='充值金额分布 (Tableau绘图整理数据)' name='federated.0qdk4190k4l0pv1av1lh40vcw7fl' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qdk4190k4l0pv1av1lh40vcw7fl'>
+            <column-instance column='[区间]' derivation='None' name='[none:区间:nk]' pivot='key' type='nominal' />
+            <column-instance column='[游戏名称]' derivation='None' name='[none:游戏名称:nk]' pivot='key' type='nominal' />
+            <column-instance column='[充值总人数]' derivation='Sum' name='[sum:充值总人数:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[充值总金额]' derivation='Sum' name='[sum:充值总金额:qk]' pivot='key' type='quantitative' />
+            <column datatype='integer' name='[充值总人数]' role='measure' type='quantitative' />
+            <column datatype='real' name='[充值总金额]' role='measure' type='quantitative' />
+            <column datatype='string' name='[区间]' role='dimension' type='nominal' />
+            <column datatype='string' name='[游戏名称]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:游戏名称:nk]'>
+            <groupfilter function='member' level='[none:游戏名称:nk]' member='&quot;梦想世界端游&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:游戏名称:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[sum:充值总人数:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='height' field='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:区间:nk]' value='45' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:区间:nk]' value='34' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='10' />
+            <format attr='text-orientation' data-class='subtotal' field='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:区间:nk]' value='90' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:区间:nk]' value='8' />
+            <format attr='display' field='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:区间:nk]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='font-size' value='8' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-size' value='8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' y-axis-name='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[sum:充值总人数:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='3' y-axis-name='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[sum:充值总金额:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.0qdk4190k4l0pv1av1lh40vcw7fl].[sum:充值总金额:qk] + [federated.0qdk4190k4l0pv1av1lh40vcw7fl].[sum:充值总人数:qk])</rows>
+        <cols>[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:区间:nk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='充值金额分布'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='filters' />
+            <card type='marks' />
+            <card type='pages' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0qdk4190k4l0pv1av1lh40vcw7fl].[none:游戏名称:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='充值金额分布' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
